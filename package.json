@@ -1,0 +1,36 @@
+{
+  "name": "jb-payment-input-react",
+  "description": "payment input react component",
+  "type": "module",
+  "author": {
+		"name": "mohammad javad bathaei",
+		"email": "javadbat@gmail.com"
+	},
+  "keywords": [
+    "jb",
+    "jb-payment-input",
+    "card number",
+    "shaba",
+    "shaba number",
+    "iran bank",
+    "react",
+    "react component"
+  ],
+  "version": "1.0.0",
+  "bugs": "https://github.com/javadbat/jb-payment-input-react/issues",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib/",
+    "dist/"
+  ],
+  "main": "index.js",
+  "repository": {
+		"type": "git",
+		"url": "git@github.com:javadbat/jb-payment-input-react.git"
+  },
+  "dependencies": {
+    "jb-payment-input": ">=1.0.0"
+  }
+}
