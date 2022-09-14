@@ -25,11 +25,11 @@ npm i jb-payment-input-react
 ```
 in your jsx file
 ```js
-import JBPaymentInput from 'jb-payment-input-react';
+import {JBPaymentInput} from 'jb-payment-input-react';
 ```
 ``` jsx
-<JBPaymentInput class="" label="card number" inputType="CARD_NUMBER"></JBPaymentInput>
-<JBPaymentInput class="" label="shaba number" inputType="SHABA_NUMBER"></JBPaymentInput>
+<JBPaymentInput  label="card number" inputType="CARD_NUMBER"></JBPaymentInput>
+<JBPaymentInput  label="shaba number" inputType="SHABA_NUMBER"></JBPaymentInput>
 ```
 
 
