@@ -1,4 +1,4 @@
-# JBPaymentInput React
+# JBPaymentInput React component
 
 this component is React.js wrapper for [jb-payment-input](https://www.npmjs.com/package/jb-payment-input) web component
 
