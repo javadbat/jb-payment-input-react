@@ -91,6 +91,12 @@ you can check if an input value meet your validation standad by creating a ref o
 ```
 if `isValid` is `true` the value of input is valid.
 
+### separator (devider) string
+payment input by default use space to separate part of card number or shaba number. for example it will show `1234123412341234` as `1234 1234 1234 1234` but you can change it to what char or even string you want for eample devide it by `-` and you will see `1234-1234-1234-1234`.    
+to make this happen you just have to set `separator` prop in jsx.
+```html
+<jbPaymentInput separator="-"></jbPaymentInput>
+```
 
 ## other props
 |props name | description        |
