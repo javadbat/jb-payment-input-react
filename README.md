@@ -43,7 +43,8 @@ import {JBPaymentInput} from 'jb-payment-input-react';
     <JBPaymentInput onKeyUp={(event) => console.log(event.target.value)}></JBPaymentInput>
 ```
 - onEnter
-```jsx 
+```jsx
+    //when user press Enter button
     <JBPaymentInput onEnter={(event) => console.log(event.target.value)}></JBPaymentInput>
 ```
 - onKeydown
