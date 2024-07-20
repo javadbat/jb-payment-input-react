@@ -1,10 +1,11 @@
 import React, { useRef, useEffect, useState, useImperativeHandle } from 'react';
-import PropTypes from 'prop-types';
-import {type JBInputEventType } from 'jb-input/types';
+import {type Props as JBInputProps } from 'jb-input-react';
+import {useJBInputAttribute } from 'jb-input-react/lib/attributes-hook';
+import {useJBInputEvents } from 'jb-input-react/lib/events-hook';
 import 'jb-payment-input';
 // eslint-disable-next-line no-duplicate-imports
 import {JBPaymentInputWebComponent} from 'jb-payment-input';
-import { useEvent } from '../../../common/hooks/use-event';
+import {PaymentInputType} from 'jb-payment-input/types';
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
@@ -21,7 +22,7 @@ declare global {
   }
 }
 // eslint-disable-next-line react/display-name
-const JBPaymentInput = React.forwardRef((props:any, ref) => {
+const JBPaymentInput = React.forwardRef((props:Props, ref) => {
   const element = useRef<JBPaymentInputWebComponent>(null);
   const [refChangeCount, refChangeCountSetter] = useState(0);
   useImperativeHandle(
@@ -32,54 +33,8 @@ const JBPaymentInput = React.forwardRef((props:any, ref) => {
   useEffect(() => {
     refChangeCountSetter(refChangeCount + 1);
   }, [element.current]);
-  function onChange(e:JBInputEventType<KeyboardEvent>) {
-    if (props.onChange) {
-      props.onChange(e);
-    }
-  }
-  function onKeydown(e:JBInputEventType<KeyboardEvent>) {
-    if (props.onKeydown) {
-      props.onKeydown(e);
-    }
-  }
-  function onKeyup(e:JBInputEventType<KeyboardEvent>) {
-    if (typeof props.onKeyup == "function") {
-      props.onKeyup(e);
-    }
-  }
-  function onEnter(e:JBInputEventType<KeyboardEvent>) {
-    if (props.onEnter) {
-      props.onEnter(e);
-    }
-  }
-  function onFocus(e:JBInputEventType<FocusEvent>) {
-    if (props.onFocus && e instanceof FocusEvent) {
-      props.onFocus(e);
-    }
-  }
-  function onBlur(e:JBInputEventType<FocusEvent>) {
-    if (props.onBlur && e instanceof FocusEvent) {
-      props.onBlur(e);
-    }
-  }
-  function onInput(e:JBInputEventType<InputEvent>) {
-    if (typeof props.onInput == 'function' && e instanceof InputEvent) {
-      props.onInput(e);
-    }
-  }
-  function onBeforeInput(e:JBInputEventType<InputEvent>) {
-    if (typeof props.onBeforeinput == 'function' && e instanceof InputEvent) {
-      props.onBeforeinput(e);
-    }
-  }
-  useEffect(() => {
-    let value = props.value;
-    if (props.value === null || props.value === undefined) {
-      value = '';
-    }else{
-      element.current.value = value;
-    }
-  }, [props.value]);
+  useJBInputAttribute(element,props);
+  useJBInputEvents(element,props);
   useEffect(() => {
     element.current.setAttribute('input-type', props.inputType);
   }, [props.inputType]);
@@ -88,33 +43,6 @@ const JBPaymentInput = React.forwardRef((props:any, ref) => {
       element.current.separatorString = props.separator;
     }
   }, [props.separator]);
-  useEffect(() => {
-    element.current.validation.list = props.validationList || [];
-  }, [props.validationList]);
-  useEffect(() => {
-    element.current.setAttribute('direction', props.direction);
-  }, [props.direction]);
-  useEffect(() => {
-    if (typeof props.disabled == "boolean") {
-      element.current.setAttribute('disabled', `${props.disabled}`);
-    }
-  }, [props.disabled]);
-  useEffect(() => {
-    if(props.inputmode){
-      element.current.setAttribute('inputmode',props.inputmode);
-    }else{
-      element.current.removeAttribute('inputmode');
-    }
-  }
-  , [props.inputmode]);
-  useEvent(element.current, 'change', onChange);
-  useEvent(element.current, 'input', onInput);
-  useEvent(element.current, 'beforeinput', onBeforeInput);
-  useEvent(element.current, 'keydown', onKeydown);
-  useEvent(element.current, 'keyup', onKeyup);
-  useEvent(element.current, 'focus', onFocus);
-  useEvent(element.current, 'blur', onBlur);
-  useEvent(element.current, 'enter', onEnter);
   return (
     <jb-payment-input placeholder={props.placeholder?props.placeholder:''} ref={element} class={props.className?props.className:''} label={props.label?props.label:''} message={props.message?props.message:''}>
       {props.children}
@@ -122,28 +50,9 @@ const JBPaymentInput = React.forwardRef((props:any, ref) => {
   );
 });
 
-JBPaymentInput.propTypes = {
-  label: PropTypes.string,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onChange: PropTypes.func,
-  onKeyup: PropTypes.func,
-  onKeydown: PropTypes.func,
-  onEnter: PropTypes.func,
-  onInput: PropTypes.func,
-  onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
-  onBeforeinput: PropTypes.func,
-  className: PropTypes.string,
-  validationList: PropTypes.array,
-  placeholder: PropTypes.string,
-  direction: PropTypes.string,
-  numberFieldParameter: PropTypes.object,
-  disabled: PropTypes.bool,
-  inputmode: PropTypes.string,
-  message: PropTypes.string,
-  inputType: PropTypes.string,
-  children: PropTypes.element,
-  separator: PropTypes.string,
+export type Props = JBInputProps & {
+  inputType: PaymentInputType,
+  separator: string,
 };
 JBPaymentInput.displayName = "JBPaymentInput";
 export {JBPaymentInput};
