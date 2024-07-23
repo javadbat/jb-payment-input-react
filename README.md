@@ -28,8 +28,8 @@ in your jsx file
 import {JBPaymentInput} from 'jb-payment-input-react';
 ```
 ``` jsx
-<JBPaymentInput  label="card number" inputType="CARD_NUMBER"></JBPaymentInput>
-<JBPaymentInput  label="shaba number" inputType="SHABA_NUMBER"></JBPaymentInput>
+<JBPaymentInput  label="card number" inputType="CARD"></JBPaymentInput>
+<JBPaymentInput  label="shaba number" inputType="SHABA"></JBPaymentInput>
 ```
 
 
@@ -64,7 +64,7 @@ import {JBPaymentInput} from 'jb-payment-input-react';
 
 ## set validation
 
-you can set validation to your input by creating a validationList array and passing in to validationList props:
+you can set validation to your input by creating a validationList array and passing in to `validationList` props:
 
 ``` javascript
     const validationList = [
@@ -72,10 +72,25 @@ you can set validation to your input by creating a validationList array and pass
             validator: /.{3}/g,
             message: 'عنوان حداقل باید سه کاکتر طول داشته باشد'
         },
-        #you can use function as a validator too
+        //you can use function as a validator too
         {
-            validator: (inputedText)=>{return inputedText == "سلام"},
-            message: 'شما تنها میتوانید عبارت سلام را وارد کنید'
+            validator: ({displayValue,value})=>{return value !== "50413731111111"},
+            message: 'this id card in banned'
+        },
+        {
+            validator: ({displayValue,value})=>{
+                if(value.startsWith('11111111')){
+                    return 'we dont accept foo bank cards'
+                }
+                if(displayValue.startsWith('2222 2222')){
+                    return 'we dont accept bar bank cards'
+                }
+                if(value.startsWith('3333')){
+                    return false
+                }
+                return true
+            },
+            message: 'default message when return false'
         },
     ]
 ```
@@ -85,10 +100,10 @@ you can set validation to your input by creating a validationList array and pass
 
 ## check validation
 
-you can check if an input value meet your validation standad by creating a ref of the element using `React.createRef()`.
+you can check if an input value meet your validation standard by creating a ref of the element using `React.createRef()`.
 ```javascript
     const elementRef = React.createRef();
-    const isValid = elementRef.current.triggerInputValidation(true).isAllValid;
+    const isValid = elementRef.current.validation.checkValidity(true).isAllValid;
 ```
 if `isValid` is `true` the value of input is valid.
 
@@ -100,9 +115,7 @@ to make this happen you just have to set `separator` prop in jsx.
 ```
 
 ## other props
-|props name | description        |
-| --------- | ------------------ |
-| disabled	| disable the input  |
+this component support all attributes comes from [`jb-input-react`](https://www.npmjs.com/package/jb-input-reacts)
 
 
 ## set custom style
