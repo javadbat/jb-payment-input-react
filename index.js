@@ -1,2 +1,1 @@
-import {JBPaymentInput} from './dist/JBPaymentInput.js';
-export {JBPaymentInput};
+export {JBPaymentInput} from './dist/JBPaymentInput.js';

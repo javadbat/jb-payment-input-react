@@ -16,7 +16,7 @@
     "react",
     "react component"
   ],
-  "version": "2.0.0",
+  "version": "2.0.3",
   "bugs": "https://github.com/javadbat/jb-payment-input-react/issues",
   "license": "MIT",
   "files": [
@@ -26,6 +26,15 @@
     "dist/"
   ],
   "main": "index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/react-component/jb-payment-input/lib/JBPaymentInput.d.ts",
+      "default": "./dist/JBPaymentInput.js",
+      "import": "./dist/JBPaymentInput.js",
+      "require": "./dist/JBPaymentInput.cjs.js"
+    }
+  },
+  "types": "./dist/react-component/jb-payment-input/lib/JBPaymentInput.d.ts",
   "repository": {
 		"type": "git",
 		"url": "git@github.com:javadbat/jb-payment-input-react.git"
