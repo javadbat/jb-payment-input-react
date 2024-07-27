@@ -1,7 +1,5 @@
 import React, { useRef, useEffect, useState, useImperativeHandle } from 'react';
-import {type Props as JBInputProps } from 'jb-input-react';
-import {useJBInputAttribute } from 'jb-input-react/lib/attributes-hook';
-import {useJBInputEvents } from 'jb-input-react/lib/events-hook';
+import {type Props as JBInputProps, useJBInputAttribute,useJBInputEvents} from 'jb-input-react';
 import 'jb-payment-input';
 // eslint-disable-next-line no-duplicate-imports
 import {JBPaymentInputWebComponent} from 'jb-payment-input';
