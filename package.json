@@ -3,9 +3,9 @@
   "description": "payment input react component",
   "type": "module",
   "author": {
-		"name": "mohammad javad bathaei",
-		"email": "javadbat@gmail.com"
-	},
+    "name": "mohammad javad bathaei",
+    "email": "javadbat@gmail.com"
+  },
   "keywords": [
     "jb",
     "jb-payment-input",
@@ -18,7 +18,7 @@
     "react",
     "react component"
   ],
-  "version": "2.0.13",
+  "version": "2.0.22",
   "bugs": "https://github.com/javadbat/jb-payment-input-react/issues",
   "license": "MIT",
   "files": [
@@ -30,32 +30,23 @@
   "main": "index.js",
   "exports": {
     ".": {
-      "import":{
-        "types": "./dist/react-component/jb-payment-input/lib/JBPaymentInput.d.ts",
-        "default":"./dist/JBPaymentInput.js"
-        },
-        "require":{
-          "types": "./dist/react-component/jb-payment-input/lib/JBPaymentInput.d.ts",
-          "default":"./dist/JBPaymentInput.cjs.js"
-      } 
+      "import": "./dist/JBPaymentInput.js",
+      "require": "./dist/JBPaymentInput.cjs.js",
+      "types": "./dist/react-component/jb-payment-input/lib/JBPaymentInput.d.ts"
     },
     "./bank-indicator": {
-      "import":{
-        "default":"./dist/BankIndicator.js",
-        "types":  "./dist/react-component/jb-payment-input/lib/BankIndicator.d.ts"
-        },
-        "require":{
-          "default":"./dist/BankIndicator.js",
-          "types":  "./dist/react-component/jb-payment-input/lib/BankIndicator.d.ts"
-      }
+        "import": "./dist/BankIndicator.js",
+        "require": "./dist/BankIndicator.cjs.js",
+        "types": "./dist/react-component/jb-payment-input/lib/BankIndicator.d.ts"
     }
   },
   "repository": {
-		"type": "git",
-		"url": "git@github.com:javadbat/jb-payment-input-react.git"
+    "type": "git",
+    "url": "git@github.com:javadbat/jb-payment-input-react.git"
   },
+  "types": "./dist/react-component/jb-payment-input/lib/JBPaymentInput.d.ts",
   "dependencies": {
     "jb-payment-input": ">=3.0.5",
-    "jb-input-react":">=3.1.2"
+    "jb-input-react": ">=3.1.3"
   }
 }

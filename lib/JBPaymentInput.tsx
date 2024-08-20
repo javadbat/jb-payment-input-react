@@ -10,7 +10,7 @@ declare global {
     interface IntrinsicElements {
       'jb-payment-input': JBSearchbarType;
     }
-    interface JBSearchbarType extends React.DetailedHTMLProps<React.HTMLAttributes<JBPaymentInputWebComponent>, JBPaymentInputWebComponent> {
+     interface JBSearchbarType extends React.DetailedHTMLProps<React.HTMLAttributes<JBPaymentInputWebComponent>, JBPaymentInputWebComponent> {
       "class"?: string,
       "type"?: string,
       "label"?:string,
@@ -49,8 +49,8 @@ const JBPaymentInput = React.forwardRef((props:Props, ref) => {
 });
 
 export type Props = JBInputProps & {
-  inputType: PaymentInputType,
-  separator: string,
+  inputType?: PaymentInputType | null,
+  separator?: string | null,
 };
 JBPaymentInput.displayName = "JBPaymentInput";
 export {JBPaymentInput};

@@ -36,9 +36,9 @@ const BankIndicator = React.forwardRef((props:Props, ref) => {
 });
 
 export type Props = {
-  className:string,
-  slot:string,
-  prefix:string
+  className?:string,
+  slot?:string,
+  prefix?:string
 };
 BankIndicator.displayName = "BankIndicator";
 export {BankIndicator};
