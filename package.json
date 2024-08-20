@@ -18,7 +18,7 @@
     "react",
     "react component"
   ],
-  "version": "2.0.12",
+  "version": "2.0.13",
   "bugs": "https://github.com/javadbat/jb-payment-input-react/issues",
   "license": "MIT",
   "files": [
@@ -37,8 +37,7 @@
         "require":{
           "types": "./dist/react-component/jb-payment-input/lib/JBPaymentInput.d.ts",
           "default":"./dist/JBPaymentInput.cjs.js"
-      },
-      "types":"./dist/react-component/jb-payment-input/lib/JBPaymentInput.d.ts"
+      } 
     },
     "./bank-indicator": {
       "import":{
@@ -48,8 +47,7 @@
         "require":{
           "default":"./dist/BankIndicator.js",
           "types":  "./dist/react-component/jb-payment-input/lib/BankIndicator.d.ts"
-      },
-      "types":"./dist/react-component/jb-payment-input/lib/BankIndicator.d.ts"
+      }
     }
   },
   "repository": {
@@ -58,6 +56,6 @@
   },
   "dependencies": {
     "jb-payment-input": ">=3.0.5",
-    "jb-input-react":">=3.1.1"
+    "jb-input-react":">=3.1.2"
   }
 }
