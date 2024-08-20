@@ -16,7 +16,7 @@ payment info input `react component` with this benefit:
 
 - support both card number and shaba number
 
-Demo : [code sand Box](https://codesandbox.io/p/sandbox/jb-payment-input-react-nlhjp3)
+Demo :  Demo: [codeSandbox preview](https://3f63dj.csb.app/samples/jb-payment-input) for just see the demo and [codeSandbox editor](https://codesandbox.io/p/sandbox/jb-design-system-3f63dj?file=%2Fsrc%2Fsamples%2FJBPaymentInput.tsx) if you want to see and play with code
 
 ## install
 
