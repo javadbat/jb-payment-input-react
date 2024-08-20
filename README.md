@@ -124,4 +124,12 @@ this component support all attributes comes from [`jb-input-react`](https://www.
 
 in some cases in your project you need to change default style of web-component for example you need zero margin or different border-radius and etc.    
 if you want to set a custom style to this web-component all you need is to set css variable in parent scope of web-component.
-since jb-payment-input use jb-input underneath, read [jb-input](https://github.com/javadbat/jb-input) custom style list                                                      |
+since jb-payment-input use jb-input underneath, read [jb-input](https://github.com/javadbat/jb-input) custom style list.
+
+## Other Related Docs:
+
+- see [jb-payment-input](https://github.com/javadbat/jb-payment-input) if you want to use this component as a pure-js web-component
+
+- see [All JB Design system Component List](https://github.com/javadbat/design-system/blob/master/docs/component-list.md) for more components
+
+- use [Contribution Guide](https://github.com/javadbat/design-system/blob/master/docs/contribution-guide.md) if you want to contribute in this component.

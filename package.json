@@ -18,7 +18,7 @@
     "react",
     "react component"
   ],
-  "version": "2.0.23",
+  "version": "2.1.0",
   "bugs": "https://github.com/javadbat/jb-payment-input-react/issues",
   "license": "MIT",
   "files": [
@@ -46,7 +46,7 @@
   },
   "types": "./dist/react-component/jb-payment-input/lib/JBPaymentInput.d.ts",
   "dependencies": {
-    "jb-payment-input": ">=3.0.5",
+    "jb-payment-input": ">=3.0.6",
     "jb-input-react": ">=3.1.3"
   }
 }
