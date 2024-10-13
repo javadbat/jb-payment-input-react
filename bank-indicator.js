@@ -1,0 +1,1 @@
+export {BankIndicator} from './dist/BankIndicator.js';
