@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useImperativeHandle } from 'react';
 import 'jb-payment-input/bank-indicator';
 // eslint-disable-next-line no-duplicate-imports
-import {BankIndicatorWebComponent} from 'jb-payment-input/bank-indicator';
+import {BankIndicatorWebComponent} from 'jb-payment-input/bank-indicator.js';
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {

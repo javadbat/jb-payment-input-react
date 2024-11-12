@@ -3,7 +3,7 @@ import {type Props as JBInputProps, useJBInputAttribute,useJBInputEvents} from '
 import 'jb-payment-input';
 // eslint-disable-next-line no-duplicate-imports
 import {JBPaymentInputWebComponent} from 'jb-payment-input';
-import {PaymentInputType} from 'jb-payment-input/types';
+import {PaymentInputType} from 'jb-payment-input/types.js';
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
