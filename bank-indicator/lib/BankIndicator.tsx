@@ -1,7 +1,8 @@
 import React, { useRef, useEffect, useState, useImperativeHandle } from 'react';
 import 'jb-payment-input/bank-indicator';
+//@ts-ignore
 // eslint-disable-next-line no-duplicate-imports
-import {BankIndicatorWebComponent} from 'jb-payment-input/bank-indicator';
+import type {BankIndicatorWebComponent} from 'jb-payment-input/bank-indicator';
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
@@ -27,7 +28,7 @@ const BankIndicator = React.forwardRef((props:Props, ref) => {
   }, [element.current]);
   useEffect(() => {
     if( props.prefix && typeof props.prefix === "string" && props.prefix !== ""){
-      element.current.setAttribute('prefix', props.prefix);
+      element.current?.setAttribute('prefix', props.prefix);
     }
   }, [props.prefix]);
   return (
