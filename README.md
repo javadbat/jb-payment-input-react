@@ -117,6 +117,7 @@ to make this happen you just have to set `separator` prop in jsx.
 ```
 
 ## other props
+<!-- TODO: update it -->
 this component support all attributes comes from [`jb-input-react`](https://www.npmjs.com/package/jb-input-reacts)
 
 
