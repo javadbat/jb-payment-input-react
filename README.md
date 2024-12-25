@@ -1,5 +1,8 @@
 # JBPaymentInput React component
 
+> [!WARNING]  
+> this package is deprecated and moved to [jb-payment-input/react](https://github.com/javadbat/jb-payment-input/tree/main/react)
+
 this component is React.js wrapper for [jb-payment-input](https://www.npmjs.com/package/jb-payment-input) web component
 
 payment info input `react component` with this benefit:

@@ -18,7 +18,7 @@
     "react",
     "react component"
   ],
-  "version": "2.2.2",
+  "version": "2.2.3",
   "bugs": "https://github.com/javadbat/jb-payment-input-react/issues",
   "license": "MIT",
   "files": [
